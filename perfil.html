@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mais Cargas</title>
+    <!-- CSS Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- CSS Personalizada -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- CSS Font-Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+        integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+</head>
+
+<body class="body-profile">
+    <header>
+        <div class="black-filter hide"></div>
+        <nav class="bg_collapse sideBar">
+            <div class="container">
+                <button class="btn btn-close-sidebar" data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Fechar o menu" role="button">
+                    <i class="fas fa-times fa-lg" aria-hidden="true" id="close-icon"></i>
+                </button>
+                <div class="row">
+                    <div class="col-12 profile">
+                        <div class="row">
+                            <div class="col-3 profile-picture">
+                                <img src="img/caminhao2.jpg" alt="Foto de Perfil" height="50" width="50"
+                                    class="rounded-circle">
+                            </div>
+                            <div class="col-9 profile-text">
+                                <span>Ola,</span>
+                                <br>
+                                <span class="text-capitalize">Bruno</span>
+                                <!-- Primeiro nome do Motorista -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="col-12 nav-list">
+                        <ul>
+                            <li>
+                                <a href="perfil.html" class="d-block active" role="navigation"> <i
+                                        class="fas fa-archive"></i>
+                                    <span>Perfil</span></a>
+                            </li>
+                            <li>
+                                <a href="cargas.html" class="d-block" role="navigation"> <i class="fas fa-archive"></i>
+                                    <span>Cargas</span></a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-block modal-checkin" role="navigation"> <i
+                                        class="fas fa-map-marker-alt"></i> <span>Check
+                                        In</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <section class="bg-baixeApp">
+            <div class="container">
+                <div class="row pt-1 pb-2">
+                    <div class="col-8 d-flex">
+                        <p class="text-center my-auto ms-2">Baixe agora o aplicativo</p>
+                    </div>
+                    <div class="col-4 d-flex">
+                        <a href="#" class="btn btn-baixarApp me-2" role="button" type="button">
+                            Baixar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <section>
+        <div id="modal-checkin" class="modal fade">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="d-flex justify-content-end ">
+                        <button type="button" class="modal-close" data-bs-dismiss="modal">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h2>Check In</h2>
+                                </div>
+                                <div class="col-12">
+                                    <h3 class="small">Status: Ativo</h3>
+                                </div>
+                                <form>
+                                    <div class="col-12 form-input">
+                                        <div class="d-flex align-items-center rounded input-origem input-field">
+                                            <span class="form-icon"><i class="fas fa-map-marker-alt mx-3"></i></span>
+                                            <div class="position-relative w-100 me-3">
+                                                <label for="origem" class="position-absolute">Origem</label>
+                                                <input type="text" id="origem" name="origem" class="w-100" required
+                                                    aria-required="true" onkeyup="onChangeText(this, 'input-origem')"
+                                                    onfocus="onFocus('input-origem')" onblur="onBlur('input-origem')">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 form-input">
+                                        <div class="d-flex align-items-center rounded input-destino input-field">
+                                            <span class="form-icon"><i class="fas fa-map-marker-alt mx-3"></i></span>
+                                            <div class="position-relative w-100 me-3">
+                                                <label for="destino" class="position-absolute">Destino</label>
+                                                <input type="text" id="destino" name="destino" class="w-100" required
+                                                    aria-required="true" onkeyup="onChangeText(this, 'input-destino')"
+                                                    onfocus="onFocus('input-destino')" onblur="onBlur('input-destino')">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12" style="margin-bottom: 32px;">
+                                        <div class="form-floating">
+                                            <select class="form-select" id="vel-select" aria-label="Escolha o veículo">
+                                                <option value="1" selected>NAO-4E20</option>
+                                                <option value="2">SIM-4E21</option>
+                                            </select>
+                                            <label for="vel-select">Veículo</label>
+                                        </div>
+                                    </div>
+                                    <button class="btn save-button justify-content-center d-flex w-100" type="submit"
+                                        role="button">
+                                        Salvar Check In
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main id="main">
+        <div class="container-fluid bg-top-navbar">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 col-md-12 justify-content-center d-block">
+                        <div class="top-navbar-items">
+                            <button class="btn btn-open-sidebar" data-bs-toggle="tooltip" data-bs-placement="right"
+                                title="Abrir o menu" role="button">
+                                <i class="fas fa-bars fa-lg" aria-hidden="true" id="bars-icon"></i>
+                            </button>
+                            <h1 class="text-center">Perfil</h1>
+                        </div>
+                    </div>
+                    <div class="col-12 default-profile-picture unhide justify-content-center d-flex">
+                        <img src="img/caminhao2.jpg" class="rounded-circle" alt="Foto de Perfil" width="120"
+                            height="120" id="my-picture">
+                        <div class="switch-picture">
+                            <input type="file" title="Trocar de foto" value="" id="profile-picture">
+                            <label for="profile-picture">
+                                <span><i class="fas fa-camera"></i></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-sm-12 col-md-4 col-lg-3 my-data">
+                            <ul role="navigation">
+                                <li>
+                                    <a href="perfil.html" class="d-block active data-link">
+                                        <i class="fas fa-user filled"></i><span>Dados Pessoais</span> <i
+                                            class="fas fa-chevron-right" style="float: right;  margin-top: 3px;"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="enderecos.html" class="d-block data-link">
+                                        <i class="fas fa-building filled"></i><span>Endereços</span> <i
+                                            class="fas fa-chevron-right" style="float: right;  margin-top: 3px;"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-12 col-md-8 col-lg-7 my-data">
+                            <h2>
+                                Dados Pessoais
+                            </h2>
+                            <form>
+                                <div class="row">
+                                    <div class="col-lg-7 col-md-12 form-input">
+                                        <div class="d-flex align-items-center rounded input-nome input-field">
+                                            <span class="form-icon"><i class="fas fa-user mx-3"></i></span>
+                                            <div class="position-relative w-100 me-3">
+                                                <label for="name" class="position-absolute">Nome Completo</label>
+                                                <input type="text" id="name" name="name" class="w-100" required
+                                                    aria-required="true" onkeyup="onChangeText(this, 'input-nome')"
+                                                    onfocus="onFocus('input-nome')" onblur="onBlur('input-nome')">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 col-md-6 form-input">
+                                        <div
+                                            class="d-flex align-items-center rounded text-field input-cpfCNPJ input-field">
+                                            <span class="form-icon"><i class="fas fa-clipboard-list mx-3"></i></span>
+                                            <div class="position-relative w-100 me-3">
+                                                <label for="cpfCNPJ" class="position-absolute">CPF/CNPJ</label>
+                                                <input type="number" id="cpfCNPJ" name="cpfCNPJ" class="w-100" required
+                                                    aria-required="true" onkeyup="onChangeText(this, 'input-cpfCNPJ')"
+                                                    onfocus="onFocus('input-cpfCNPJ')" onblur="onBlur('input-cpfCNPJ')">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 form-input">
+                                        <div
+                                            class="d-flex align-items-center rounded text-field input-rntrc input-field">
+                                            <span class="form-icon"><i class="fas fa-car mx-3"></i></span>
+                                            <div class="position-relative w-100 me-3">
+                                                <label for="rntrc" class="position-absolute">RNTRC</label>
+                                                <input type="number" id="rntrc" name="rntrc" class="w-100" required
+                                                    aria-required="true" onkeyup="onChangeText(this, 'input-rntrc')"
+                                                    onfocus="onFocus('input-rntrc')" onblur="onBlur('input-rntrc')">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="form-floating">
+                                            <select class="form-select" id="rntrc-type" aria-label="Escolha o veículo">
+                                                <option value="1" selected>ETC</option>
+                                                <option value="2">TAC</option>
+                                            </select>
+                                            <label for="rntrc-type">Escolha o tipo de RNTRC</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 col-md-7 form-input">
+                                        <div class="d-flex align-items-center rounded  input-field input-field-date">
+                                            <div class="position-relative w-100 px-3 d-flex">
+                                                <label for="valRNTRC" class="position-absolute">Validade RNTRC</label>
+                                                <div class="justify-content-center">
+                                                    <input type="month" id="valRNTRC" name="valRNTRC"
+                                                        onkeyup="onChangeText(this, 'input-valRNTRC')"
+                                                        onfocus="onFocus('input-valRNTRC')"
+                                                        onblur="onBlur('input-valRNTRC')"
+                                                        placeholder="Ex.: Janeiro de 2029" required
+                                                        aria-required="true">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 col-md-5 form-input">
+                                        <div class="d-flex align-items-center rounded text-field input-cnh input-field">
+                                            <span class="form-icon"><i class="fas fa-address-card mx-3"></i></span>
+                                            <div class="position-relative w-100 me-3">
+                                                <label for="cnh" class="position-absolute">CNH</label>
+                                                <input type="number" id="cnh" name="cnh" class="w-100" required
+                                                    aria-required="true" onkeyup="onChangeText(this, 'input-cnh')"
+                                                    onfocus="onFocus('input-cnh')" onblur="onBlur('input-cnh')">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn save-button justify-content-center d-flex w-100" type="submit"
+                                    role="button">
+                                    Salvar
+                                </button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+
+
+    <script src="js/jquery-min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/my.js"></script>
+    <script src="js/modal.js"></script>
+</body>
+
+</html>

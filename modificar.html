@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mais Cargas</title>
+    <!-- CSS Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- CSS Personalizada -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- CSS Font-Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+        integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <div class="black-filter hide"></div>
+        <nav class="bg_collapse sideBar">
+            <div class="container">
+                <button class="btn btn-close-sidebar" data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Fechar o menu" role="button">
+                    <i class="fas fa-times fa-lg" aria-hidden="true" id="close-icon"></i>
+                </button>
+                <div class="row">
+                    <div class="col-12 profile">
+                        <div class="row">
+                            <div class="col-3 profile-picture">
+                                <img src="img/caminhao2.jpg" alt="Foto de Perfil" height="50" width="50"
+                                    class="rounded-circle">
+                            </div>
+                            <div class="col-9 profile-text">
+                                <span>Ola,</span>
+                                <br>
+                                <span class="text-capitalize">Bruno</span>
+                                <!-- Primeiro nome do Motorista -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="col-12 nav-list">
+                        <ul>
+                            <li>
+                                <a href="perfil.html" class="d-block active"> <i class="fas fa-archive"></i> <span>Perfil</span></a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-block"> <i class="fas fa-archive"></i> <span>Cargas</span></a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-block"> <i class="fas fa-map-marker-alt"></i> <span>Check In</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <section class="bg-baixeApp">
+            <div class="container">
+                <div class="row pt-1 pb-2">
+                        <div class="col-8 d-flex">
+                            <p class="text-center my-auto mx-auto">Baixe agora o aplicativo</p>
+                        </div>
+                        <div class="col-4 d-flex">
+                            <a href="#" class="btn btn-baixarApp mx-auto" role="button" type="btn">
+                                Baixar
+                            </a>
+                        </div>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <main id="main">
+        <div class="container-fluid bg-top-navbar">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 col-md-12 justify-content-center d-block">
+                        <div class="top-navbar-items">
+                            <button class="btn btn-open-sidebar" data-bs-toggle="tooltip" data-bs-placement="right"
+                                title="Abrir o menu" role="button">
+                                <i class="fas fa-bars fa-lg" aria-hidden="true" id="bars-icon"></i>
+                            </button>
+                            <h1 class="text-center">Perfil</h1>
+                        </div>
+                    </div>
+                    <div class="col-12 default-profile-picture unhide justify-content-center d-flex">
+                        <img src="img/caminhao2.jpg" class="rounded-circle" alt="Foto de Perfil" width="120"
+                            height="120" id="my-picture">
+                            <div class="switch-picture">
+                                <input type="file" title="Trocar de foto" value="" id="profile-picture">
+                                    <label for="profile-picture">
+                                        <span><i class="fas fa-camera"></i></span>
+                                    </label>
+                            </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-sm-12 col-md-4 col-lg-3 my-data">
+                            <ul role="navigation">
+                                <li>
+                                    <a href="perfil.html" class="d-block data-link">
+                                        <i class="fas fa-user filled"></i><span>Dados Pessoais</span> <i
+                                            class="fas fa-chevron-right" style="float: right;  margin-top: 3px;"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="enderecos.html" class="d-block data-link">
+                                        <i class="fas fa-building filled"></i><span>Endereços</span> <i
+                                            class="fas fa-chevron-right" style="float: right;  margin-top: 3px;"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-12 col-md-8 col-lg-7 my-data">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item" aria-current="page"><a href="perfil.html">Inicio</a></li>
+                                <li class="breadcrumb-item" aria-current="page">Endereços</li>
+                                <li class="breadcrumb-item active" aria-current="page">Modificar</li>
+                            </ol>
+                            <h2>
+                                Modificar Endereço
+                            </h2>
+
+                            <form>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-12 form-input">
+                                        <div class="d-flex align-items-center rounded input-nome input-field">
+                                            <span class="form-icon"><i class="fas fa-building mx-3"></i></span>
+                                            <div class="position-relative w-100 me-3">
+                                                <label for="name" class="position-absolute">Nome</label>
+                                                <input type="text" id="name" name="name" class="w-100"
+                                                 aria-required="true" 
+                                                    onkeyup="onChangeText(this, 'input-nome')"
+                                                    onfocus="onFocus('input-nome')" onblur="onBlur('input-nome')">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-12 form-input">
+                                        <div
+                                            class="d-flex align-items-center rounded text-field input-city input-field">
+                                            <span class="form-icon"><i class="fas fas fa-building mx-3"></i></span>
+                                            <div class="position-relative w-100 me-3">
+                                                <label for="city" class="position-absolute">Cidade</label>
+                                                <input type="text" id="city" name="city" class="w-100"
+                                                 aria-required="true"
+                                                    onkeyup="onChangeText(this, 'input-city')"
+                                                    onfocus="onFocus('input-city')" onblur="onBlur('input-city')">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-5 col-5 form-input">
+                                        <div
+                                            class="d-flex align-items-center rounded text-field input-state input-field">
+                                            <span class="form-icon"><i class="fas fas fa-building mx-3"></i></span>
+                                            <div class="position-relative w-100 me-3">
+                                                <label for="state" class="position-absolute">Estado</label>
+                                                <input type="text" id="state" name="state" class="w-100"
+                                                 aria-required="true"
+                                                    onkeyup="onChangeText(this, 'input-state')"
+                                                    onfocus="onFocus('input-state')" onblur="onBlur('input-state')">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-md-7 col-7 form-input">
+                                        <div
+                                            class="d-flex align-items-center rounded text-field input-district input-field">
+                                            <span class="form-icon"><i class="fas fas fa-building mx-3"></i></span>
+                                            <div class="position-relative w-100 me-3">
+                                                <label for="district" class="position-absolute">Bairro</label>
+                                                <input type="text" id="district" name="district" class="w-100"
+                                                 aria-required="true"
+                                                    onkeyup="onChangeText(this, 'input-district')"
+                                                    onfocus="onFocus('input-district')" onblur="onBlur('input-district')">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-md-6 col-6 form-input">
+                                        <div
+                                            class="d-flex align-items-center rounded text-field input-street input-field">
+                                            <span class="form-icon"><i class="fas fa-building mx-3"></i></span>
+                                            <div class="position-relative w-100 me-3">
+                                                <label for="street" class="position-absolute">Rua</label>
+                                                <input type="text" id="street" name="street" class="w-100"
+                                                 aria-required="true"
+                                                    onkeyup="onChangeText(this, 'input-street')"
+                                                    onfocus="onFocus('input-street')" onblur="onBlur('input-street')">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6 col-6 form-input">
+                                        <div
+                                            class="d-flex align-items-center rounded text-field input-cep input-field">
+                                            <span class="form-icon"><i class="fas fa-building mx-3"></i></span>
+                                            <div class="position-relative w-100 me-3">
+                                                <label for="cep" class="position-absolute">CEP</label>
+                                                <input type="tel" id="cep" name="cep" class="w-100"
+                                                 aria-required="true"
+                                                    onkeyup="onChangeText(this, 'input-cep')"
+                                                    onfocus="onFocus('input-cep')" onblur="onBlur('input-cep')">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 form-input">
+                                        <div
+                                            class="d-flex align-items-center rounded text-field input-complementary input-field">
+                                            <span class="form-icon"><i class="fas fa-building mx-3"></i></span>
+                                            <div class="position-relative w-100 me-3">
+                                                <label for="complementary" class="position-absolute">Complemento</label>
+                                                <input type="text" id="complementary" name="complementary" class="w-100"
+                                                 aria-required="true"
+                                                    onkeyup="onChangeText(this, 'input-complementary')"
+                                                    onfocus="onFocus('input-complementary')" onblur="onBlur('input-complementary')">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn save-button justify-content-center d-flex w-100" type="submit" role="button">
+                                    Salvar
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+
+
+    <script src="js/jquery-min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/my.js"></script>
+</body>
+
+</html>
