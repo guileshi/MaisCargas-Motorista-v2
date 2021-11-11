@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mais Cargas</title>
+    <!-- CSS Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- CSS Personalizada -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- CSS Font-Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+        integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+</head>
+
+<body class="body-profile" id="cargos">
+    <header>
+        <div class="black-filter hide"></div>
+        <nav class="bg_collapse sideBar">
+            <div class="container">
+                <button class="btn btn-close-sidebar" data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Fechar o menu" role="button">
+                    <i class="fas fa-times fa-lg" aria-hidden="true" id="close-icon"></i>
+                </button>
+                <div class="row">
+                    <div class="col-12 profile">
+                        <div class="row">
+                            <div class="col-3 profile-picture">
+                                <img src="img/caminhao2.jpg" alt="Foto de Perfil" height="50" width="50"
+                                    class="rounded-circle">
+                            </div>
+                            <div class="col-9 profile-text">
+                                <span>Ola,</span>
+                                <br>
+                                <span class="text-capitalize">Bruno</span>
+                                <!-- Primeiro nome do Motorista -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="col-12 nav-list">
+                        <ul>
+                            <li>
+                                <a href="perfil.html" class="d-block" role="navigation"> <i class="fas fa-archive"></i>
+                                    <span>Perfil</span></a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-block active" role="navigation"> <i class="fas fa-archive"></i>
+                                    <span>Cargas</span></a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-block modal-checkin" role="navigation"> <i
+                                        class="fas fa-map-marker-alt"></i>
+                                    <span>Check
+                                        In</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <section class="bg-baixeApp">
+            <div class="container">
+                <div class="row pt-1 pb-2">
+                    <div class="col-8 d-flex">
+                        <p class="text-center my-auto">Baixe agora o aplicativo</p>
+                    </div>
+                    <div class="col-4 d-flex">
+                        <a href="#" class="btn btn-baixarApp ms-auto" role="button" type="btn">
+                            Baixar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <div id="modal-checkin" class="modal fade">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="d-flex justify-content-end ">
+                    <button type="button" class="modal-close" data-bs-dismiss="modal">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <h2>Check In</h2>
+                            </div>
+                            <div class="col-12">
+                                <h3 class="small">Status: Ativo</h3>
+                            </div>
+                            <form>
+                                <div class="col-12 form-input">
+                                    <div class="d-flex align-items-center rounded input-origem input-field">
+                                        <span class="form-icon"><i class="fas fa-map-marker-alt mx-3"></i></span>
+                                        <div class="position-relative w-100 me-3">
+                                            <label for="origem" class="position-absolute">Origem</label>
+                                            <input type="text" id="origem" name="origem" class="w-100" required
+                                                aria-required="true" onkeyup="onChangeText(this, 'input-origem')"
+                                                onfocus="onFocus('input-origem')" onblur="onBlur('input-origem')">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 form-input">
+                                    <div class="d-flex align-items-center rounded input-destino input-field">
+                                        <span class="form-icon"><i class="fas fa-map-marker-alt mx-3"></i></span>
+                                        <div class="position-relative w-100 me-3">
+                                            <label for="destino" class="position-absolute">Destino</label>
+                                            <input type="text" id="destino" name="destino" class="w-100" required
+                                                aria-required="true" onkeyup="onChangeText(this, 'input-destino')"
+                                                onfocus="onFocus('input-destino')" onblur="onBlur('input-destino')">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12" style="margin-bottom: 32px;">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="vel-select" aria-label="Escolha o veículo">
+                                            <option value="1" selected>NAO-4E20</option>
+                                            <option value="2">SIM-4E21</option>
+                                        </select>
+                                        <label for="vel-select">Veículo</label>
+                                    </div>
+                                </div>
+                                <button class="btn save-button justify-content-center d-flex w-100" type="submit"
+                                    role="button">
+                                    Salvar Check In
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="container-fluid bg-top-navbar" id="main">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-md-12 col-12 justify-content-center">
+                    <div class="top-navbar-items">
+                        <a href="cargas.html" class="btn btn-voltar"
+                            title="Detalhes da Carga" role="button">
+                            <i class="fas fa-chevron-left fa-lg" aria-hidden="true" id="bars-icon"></i>
+                        </a>
+
+                        <div class="d-flex justify-content-between item-cargo-detail-text-group">
+                            <span class="item-cargo-text-detail">Amazon Logistica</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container cargo-detail">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-md-10 col-12">
+                        <div class="d-md-flex d-block">
+                            <div class="row d-none d-md-block" id="row-desktop">
+                                <div class="col-12">
+                                    <div class="cargo-detail-picture">
+                                        <img src="img/caminhao2.jpg" class="rounded" alt="Foto da Carga">
+                                    </div>
+                                    <div class="cargo-detail-title-company">
+                                        Amazon Logistica
+                                    </div>
+                                    <a href="#" class="btn btn-cargo-detail" role="button">
+                                        Contatos
+                                    </a>
+                                    <a href="#" class="btn btn-cargo-detail --white" role="button">
+                                        Outras Cargas
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="cargo-detail-group">
+                                        <h2 class="cargo-detail-title">Empresa</h2>
+                                        <div class="d-flex d-md-block">
+
+                                            <!-- Foto da Carga no mobile -->
+                                            <div class="cargo-detail-picture d-block d-md-none">
+                                                <img src="img/caminhao2.jpg" class="rounded" alt="Foto da Carga">
+                                            </div>
+
+
+                                            <div class="cargo-detail-group-mobile">
+                                                <div class="cargo-detail-text-group">
+                                                    <div class="cargo-detail-text-title">Nome Fantasia</div>
+                                                    <div class="cargo-detail-text-content">Amazon Logistica</div>
+                                                </div>
+                                                <div class="cargo-detail-text-group">
+                                                    <div class="cargo-detail-text-title">Endereço</div>
+                                                    <div class="cargo-detail-text-content">Rua Cabo oscar rossini, 808 A, Parque novo
+                                                        mundo, São Paulo - SP</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="cargo-detail-group">
+                                        <a href="#" class="btn btn-cargo-detail" role="button">
+                                            Entrar em Contato
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="cargo-detail-group">
+                                        <h2 class="cargo-detail-title">Cargas</h2>
+                                        <div class="d-flex">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="cargo-detail-svg">
+                                                        <img src="img/distance.svg" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="cargo-detail-group mobile">
+                                                        <div class="cargo-detail-text-group">
+                                                            <div class="cargo-detail-text-title">Origem</div>
+                                                            <div class="cargo-detail-text-content">São Paulo - SP</div>
+                                                        </div>
+                                                        <div class="cargo-detail-text-group">
+                                                            <div class="cargo-detail-text-title">
+                                                                <span class="cargo-detail-text-distance">
+                                                                    500km
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="cargo-detail-text-group">
+                                                            <div class="cargo-detail-text-title">Destino</div>
+                                                            <div class="cargo-detail-text-content">São Paulo - SP</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cargo-detail-text-group observations">
+                                            <div class="cargo-detail-text-title">
+                                                Observações
+                                            </div>
+                                            <div class="cargo-detail-text-content">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Iaculis duis ipsum amet commodo odio praesent.
+                                            </div>
+                                        </div>
+                                        <table class="cargo-detail-table">
+                                            <tr>
+                                                <th class="cargo-detail-table-header">
+                                                    Geral
+                                                </th>
+                                            </tr>
+                                            <tr class="cargo-detail-table-row">
+                                                <td class="cargo-detail-table-content">
+                                                    Produto
+                                                </td>
+                                                <td class="cargo-detail-table-content">
+                                                    Caixas
+                                                </td>
+                                            </tr>
+                                            <tr class="cargo-detail-table-row">
+                                                <td class="cargo-detail-table-content">
+                                                    Complemento
+                                                </td>
+                                                <td class="cargo-detail-table-content">
+                                                    Sim
+                                                </td>
+                                            </tr>
+                                            <tr class="cargo-detail-table-row">
+                                                <td class="cargo-detail-table-content">
+                                                    Espécie
+                                                </td>
+                                                <td class="cargo-detail-table-content">
+                                                    Fracionado
+                                                </td>
+                                            </tr>
+                                            <tr class="cargo-detail-table-row">
+                                                <td class="cargo-detail-table-content">
+                                                    Preço
+                                                </td>
+                                                <td class="cargo-detail-table-content">
+                                                    R$1.200,50
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="cargo-detail-group">
+                                        <h2 class="cargo-detail-title">Veículo</h2>
+                                        <h3 class="cargo-detail-subtitle">
+                                            Veículo(s)
+                                        </h3>
+                                        <div class="cargo-detail-tags">
+                                            <div class="row">
+                                                <div class="col-auto">
+                                                    <div class="cargo-detail-tags-item">
+                                                        Toco
+                                                    </div>
+                                                </div>         
+                                                <div class="col-auto">
+                                                    <div class="cargo-detail-tags-item">
+                                                        BiTruck
+                                                    </div>
+                                                </div>  
+                                                <div class="col-auto">
+                                                    <div class="cargo-detail-tags-item">
+                                                        Truck
+                                                    </div>
+                                                </div>  
+                                                <div class="col-auto">
+                                                    <div class="cargo-detail-tags-item">
+                                                        Carreta LS
+                                                    </div>
+                                                </div>  
+                                                <div class="col-auto">
+                                                    <div class="cargo-detail-tags-item">
+                                                        Truck LS
+                                                    </div>
+                                                </div> 
+                                                <div class="col-auto">
+                                                    <div class="cargo-detail-tags-item">
+                                                        Carreta LS
+                                                    </div>
+                                                </div> 
+                                                <div class="col-auto">
+                                                    <div class="cargo-detail-tags-item">
+                                                        Carreta LS
+                                                    </div>
+                                                </div> 
+                                            </div>
+                                        </div>
+                                        <h3 class="cargo-detail-subtitle">
+                                            Carroceiria(s)
+                                        </h3>
+                                        <div class="cargo-detail-tags">
+                                            <div class="row">
+                                                <div class="col-auto">
+                                                    <div class="cargo-detail-tags-item">
+                                                        Toco
+                                                    </div>
+                                                </div>         
+                                                <div class="col-auto">
+                                                    <div class="cargo-detail-tags-item">
+                                                        BiTruck
+                                                    </div>
+                                                </div>  
+                                                <div class="col-auto">
+                                                    <div class="cargo-detail-tags-item">
+                                                        Truck
+                                                    </div>
+                                                </div>  
+                                                <div class="col-auto">
+                                                    <div class="cargo-detail-tags-item">
+                                                        Carreta LS
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                        </div>
+                                        <table class="cargo-detail-table">
+                                            <tr>
+                                                <th class="cargo-detail-table-header">
+                                                    Geral
+                                                </th>
+                                            </tr>
+                                            <tr class="cargo-detail-table-row">
+                                                <td class="cargo-detail-table-content">
+                                                    Rastreador
+                                                </td>
+                                                <td class="cargo-detail-table-content">
+                                                    sim
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+
+    <script src="js/jquery-min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/my.js"></script>
+    <script src="js/modal.js"></script>
+</body>
+
+</html>
